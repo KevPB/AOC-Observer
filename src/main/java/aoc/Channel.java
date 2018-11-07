@@ -3,14 +3,12 @@ package aoc;
 import java.util.Observable;
 import java.util.concurrent.Future;
 
-public class Channel implements ObserverGenerator, ObserverGeneratorAsync {
+public class Channel implements ObserverGeneratorAsync {
 	
 	private Display display;
 
 	@Override
-	public void update(Generator subject) {
-		// TODO Auto-generated method stub
-		
+	public Future update(Generator generator) {
+		return null;
 	}
-	
 }
