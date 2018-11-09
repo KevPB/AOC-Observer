@@ -3,7 +3,7 @@ package aoc;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GeneratorImpl implements Generator {
+public class GeneratorImpl implements Generator, Runnable {
 
     private Integer value;
     private List<ObserverGeneratorAsync> observerAsyncs;
@@ -31,6 +31,23 @@ public class GeneratorImpl implements Generator {
         }
         //this.checkCount = 0;
     }
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		System.out.println("Start Generator");
+		
+		for (int i = 0;i < 10; i++) {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				throw new IllegalStateException(e);
+			}
+			System.out.println(i);
+		}
+		
+		
+	}
 
 
 
