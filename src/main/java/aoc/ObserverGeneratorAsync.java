@@ -5,6 +5,6 @@ import java.util.concurrent.Future;
 
 public interface ObserverGeneratorAsync {
 
-    public Future update(Generator generator);
+    public Future update(Generator generatorImpl);
 
 }
