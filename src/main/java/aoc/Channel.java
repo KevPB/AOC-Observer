@@ -1,19 +1,16 @@
 package aoc;
 
+import java.util.List;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class Channel implements ObserverGeneratorAsync, GeneratorAsync {
 
-	private Generator generator;
-	private ObserverGenerator display;
+	private List<ObserverGenerator> displays;
 	private ScheduledExecutorService scheduler;
 	
-	public Channel(Generator generator, ObserverGenerator display, ScheduledExecutorService scheduler) {
-		this.generator = generator;
-		
-		this.display = display;
+	public Channel(ScheduledExecutorService scheduler) {		
 		this.scheduler = scheduler;
 	}
 	
@@ -32,5 +29,15 @@ public class Channel implements ObserverGeneratorAsync, GeneratorAsync {
 	public Future<Integer> getValue() {
 		GetValue getValue = new GetValue(generator);
 		return scheduler.schedule(getValue, 0, TimeUnit.MILLISECONDS);
+	}
+
+	@Override
+	public void attach(ObserverGenerator obs) {
+		displays.add(obs);		
+	}
+
+	@Override
+	public void detach(ObserverGenerator obs) {
+		displays.remove(obs);
 	}
 }
