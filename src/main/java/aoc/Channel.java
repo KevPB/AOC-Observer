@@ -12,6 +12,7 @@ public class Channel implements ObserverGeneratorAsync, GeneratorAsync {
 	
 	public Channel(Generator generator, ObserverGenerator display, ScheduledExecutorService scheduler) {
 		this.generator = generator;
+		
 		this.display = display;
 		this.scheduler = scheduler;
 	}

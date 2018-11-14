@@ -54,6 +54,18 @@ public class GeneratorImpl implements Generator, Runnable {
 		
 	}
 
+	@Override
+	public void attach(ObserverGeneratorAsync obs) {
+		// TODO Auto-generated method stub
+		this.observerAsyncs.add(obs);
+	}
+
+	@Override
+	public void detach(ObserverGeneratorAsync obs) {
+		// TODO Auto-generated method stub
+		this.observerAsyncs.remove(obs);
+	}
+
 
 
 }
