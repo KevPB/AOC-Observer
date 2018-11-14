@@ -23,7 +23,7 @@ public class Channel implements ObserverGeneratorAsync, GeneratorAsync {
 
 	@Override
 	public Future<Void> update(Generator generator) {
-		Update update = new Update(generator, display);
+		Update update = new Update(this, display);
 		return scheduler.schedule(update, delayGenerator(), TimeUnit.MILLISECONDS);
 	}
 

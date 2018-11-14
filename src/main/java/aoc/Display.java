@@ -4,15 +4,12 @@ public class Display implements ObserverGenerator {
 	
 	private Integer value;
 	
-	private Channel channel;
-
-	public Display(Channel channel) {
+	public Display() {
 		this.value = 0;
-		this.channel = channel;
 	}
 
-	public void update(Generator generator) throws Exception {
-		value = channel.getValue().get();
+	public void update(GeneratorAsync g) throws Exception {
+		//TODO
 	}
 
 	public Integer getValue() {

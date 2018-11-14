@@ -15,9 +15,14 @@ public class GeneratorImpl implements Generator, Runnable {
         this.value = 0;
     }
 
+    // Is this too ugly?
     public Integer getValue(){
-    	//this.checkCount++;
         return this.value;
+    }    
+    
+    public Integer getValue(ObserverGeneratorAsync obs){
+    	//this.checkCount++; TODO : check if every observer has called this method
+        return this.getValue();
     }
 
     public void increment(){

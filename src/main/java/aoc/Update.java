@@ -4,10 +4,10 @@ import java.util.concurrent.Callable;
 
 public class Update implements Callable<Void> {
 	
-	Generator generator;
+	GeneratorAsync generator;
 	ObserverGenerator display;
 
-	public Update(Generator generator, ObserverGenerator display) {
+	public Update(GeneratorAsync generator, ObserverGenerator display) {
 		this.generator = generator;
 		this.display = display;
 	}
