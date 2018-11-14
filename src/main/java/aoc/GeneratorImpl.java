@@ -48,7 +48,7 @@ public class GeneratorImpl implements Generator, Runnable {
 			} catch (InterruptedException e) {
 				throw new IllegalStateException(e);
 			}
-			System.out.println(i);
+			this.increment();
 		}
 		
 		
