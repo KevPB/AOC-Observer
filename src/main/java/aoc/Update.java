@@ -7,9 +7,9 @@ public class Update implements Callable<Void> {
 	GeneratorAsync generator;
 	ObserverGenerator display;
 
-	public Update(GeneratorAsync generator, ObserverGenerator display) {
+	public Update(GeneratorAsync generator) {
 		this.generator = generator;
-		this.display = display;
+		
 	}
 
 	@Override
