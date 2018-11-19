@@ -11,8 +11,8 @@ public class Display implements ObserverGenerator {
 	}
 
 	public void update(GeneratorAsync g) throws Exception {
-		// TODO : Get Value Phase
 		Future<Integer> future = g.getValue();
+		value = future.get();
 	}
 
 	public Integer getValue() {
