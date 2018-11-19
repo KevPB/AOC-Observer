@@ -1,5 +1,7 @@
 package aoc;
 
+import java.util.concurrent.Future;
+
 public class Display implements ObserverGenerator {
 	
 	private Integer value;
@@ -9,7 +11,8 @@ public class Display implements ObserverGenerator {
 	}
 
 	public void update(GeneratorAsync g) throws Exception {
-		//TODO
+		// TODO : Get Value Phase
+		Future<Integer> future = g.getValue();
 	}
 
 	public Integer getValue() {
