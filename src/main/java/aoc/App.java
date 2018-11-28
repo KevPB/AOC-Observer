@@ -12,10 +12,10 @@ public class App
     public static void main( String[] args )
     {
     	GeneratorImpl generator = new GeneratorImpl();
-    	ObserverGenerator display1 = new Display();
-    	ObserverGenerator display2 = new Display();
-    	ObserverGenerator display3 = new Display();
-    	ObserverGenerator display4 = new Display();
+    	ObserverGenerator display1 = new Display(1);
+    	ObserverGenerator display2 = new Display(3);
+    	ObserverGenerator display3 = new Display(2);
+    	ObserverGenerator display4 = new Display(4);
     	ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(8);
     	Channel channel1 = new Channel(scheduler);
     	channel1.attach(display1);

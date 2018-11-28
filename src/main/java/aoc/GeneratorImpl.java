@@ -7,6 +7,7 @@ public class GeneratorImpl implements Generator, Runnable {
 
     private Integer value;
     private List<ObserverGeneratorAsync> observerAsyncs;
+
     //private int checkCount;
 
     public GeneratorImpl(){
