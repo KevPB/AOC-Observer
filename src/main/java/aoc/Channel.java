@@ -1,7 +1,7 @@
 package aoc;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Callable;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -14,6 +14,7 @@ public class Channel implements ObserverGeneratorAsync, GeneratorAsync {
 	
 	public Channel(ScheduledExecutorService scheduler) {		
 		this.scheduler = scheduler;
+		this.displays = new ArrayList<ObserverGenerator>();
 	}
 	
 	private long delayGenerator() {
@@ -23,7 +24,7 @@ public class Channel implements ObserverGeneratorAsync, GeneratorAsync {
 
 	@Override
 	public Future<Void> update(Generator generator) {
-		Update update = new Update(this);
+		Update update = new Update(this, displays);
 		this.generator = generator;
 		return scheduler.schedule(update, delayGenerator(), TimeUnit.MILLISECONDS);
 	}

@@ -31,6 +31,7 @@ public class GeneratorImpl implements Generator, Runnable {
     	}*/
     	
         this.value++;
+        System.out.println("Generator: " + value);
         for(ObserverGeneratorAsync channel : observerAsyncs){
             channel.update(this);
         }
@@ -50,8 +51,7 @@ public class GeneratorImpl implements Generator, Runnable {
 			}
 			this.increment();
 		}
-		
-		
+		return;
 	}
 
 	@Override
