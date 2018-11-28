@@ -2,7 +2,7 @@ package aoc;
 
 public interface Generator {
 
-    public Integer getValue();
+    public Integer getValue(ObserverGeneratorAsync obs);
 
     public void increment();
     

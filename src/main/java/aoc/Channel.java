@@ -31,7 +31,7 @@ public class Channel implements ObserverGeneratorAsync, GeneratorAsync {
 
 	@Override
 	public Future<Integer> getValue() {
-		GetValue getValue = new GetValue(this.generator);
+		GetValue getValue = new GetValue(this.generator,this);
 		return scheduler.schedule(getValue, 0, TimeUnit.MILLISECONDS);
 	}
 
