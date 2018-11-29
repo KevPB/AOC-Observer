@@ -1,5 +1,7 @@
 package aoc;
 
+import aoc.Strategy.AlgoDiffusion;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,45 +9,45 @@ public class GeneratorImpl implements Generator, Runnable {
 
     private Integer value;
     private List<ObserverGeneratorAsync> observerAsyncs;
+    private AlgoDiffusion algoDiffusion;
 
-    public GeneratorImpl(){
+    public GeneratorImpl(AlgoDiffusion algoDiffusion){
         this.value = 0;
         this.observerAsyncs = new ArrayList<>();
-        this.value = 0;
+        this.algoDiffusion = algoDiffusion;
     }
 
     // Is this too ugly?
     public Integer getValue(){
         return this.value;
-    }    
+    }
+
+    public void setValue(int value){
+        this.value = value;
+    }
     
     public Integer getValue(ObserverGeneratorAsync obs){
 
-        return this.value;
+        return algoDiffusion.getValue(obs,this);
     }
 
     public void increment(){
         this.value++;
-        System.out.println("Generator: " + value);
-        for(ObserverGeneratorAsync channel : observerAsyncs){
-            channel.update(this);
-        }
+        System.out.println("Generator: " + this.value);
+
     }
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
-		System.out.println("Start Generator");
-		
-		for (int i = 0; i < 10; i++) {
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				throw new IllegalStateException(e);
-			}
-			this.increment();
-		}
-		return;
+
+		while(this.value < 10){
+
+		    try {
+		        Thread.sleep(1000);
+            } catch (Exception e){}
+            algoDiffusion.execute(this);
+        }
+
 	}
 
 	@Override
@@ -60,6 +62,8 @@ public class GeneratorImpl implements Generator, Runnable {
 		this.observerAsyncs.remove(obs);
 	}
 
-
+    public List<ObserverGeneratorAsync> getObserverAsyncs() {
+        return observerAsyncs;
+    }
 
 }

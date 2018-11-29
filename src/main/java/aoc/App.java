@@ -1,5 +1,7 @@
 package aoc;
 
+import aoc.Strategy.DiffusionAtomique;
+
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
@@ -11,7 +13,7 @@ public class App
 {
     public static void main( String[] args )
     {
-    	GeneratorImpl generator = new GeneratorImpl();
+    	GeneratorImpl generator = new GeneratorImpl(new DiffusionAtomique());
     	ObserverGenerator display1 = new Display(1);
     	ObserverGenerator display2 = new Display(3);
     	ObserverGenerator display3 = new Display(2);
