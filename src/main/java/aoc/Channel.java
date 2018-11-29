@@ -18,8 +18,7 @@ public class Channel implements ObserverGeneratorAsync, GeneratorAsync {
 	}
 	
 	private long delayGenerator() {
-		//TODO
-		return 1000;
+		return 100 + ((long) (1900 * Math.random()));
 	}
 
 	@Override
