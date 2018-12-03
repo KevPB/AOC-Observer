@@ -14,7 +14,7 @@ public class GetValue implements Callable<Integer> {
 
 	@Override
 	public Integer call() throws Exception {
-		return generator.getValue(this.observerGeneratorAsync);
+		return generator.getValue();
 	}
 
 }

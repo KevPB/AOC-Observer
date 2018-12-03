@@ -50,7 +50,7 @@ public class DiffusionSequentielle implements AlgoDiffusion {
 	}
 
 	public void execute(GeneratorImpl g) {
-		
+
 		g.increment();
 
 		// Si la copie précédente a été lue par tous les afficheurs,
@@ -72,18 +72,20 @@ public class DiffusionSequentielle implements AlgoDiffusion {
 
 	}
 
-	public Integer getValue(ObserverGeneratorAsync reader, GeneratorImpl generator) {
-		
+	public void aReaderReads(ObserverGeneratorAsync reader) {
 		// On enregistre le lecteur dans la liste des lecteurs qui ont lu la copie.
 		if (observers.contains(reader) && !readers.contains(reader)) {
 			readers.add(reader);
 		}
-		
+
 		// On vérifie si tous les lecteurs ont lu la copie.
 		if (readers.size() == observers.size()) {
 			ready = true;
 		}
-		
+	}
+
+	public Integer getValue(ObserverGeneratorAsync reader, GeneratorImpl generator) {
+
 		// Valeur à retourner au lecteur
 		return value;
 	}
