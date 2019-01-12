@@ -3,6 +3,9 @@ package aoc;
 import java.util.List;
 import java.util.concurrent.Callable;
 
+/**
+ * Methode invocation Update in ActiveObject Pattern
+ */
 public class Update implements Callable<Void> {
 	
 	private GeneratorAsync generator;

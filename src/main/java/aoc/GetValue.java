@@ -2,6 +2,9 @@ package aoc;
 
 import java.util.concurrent.Callable;
 
+/**
+ * Methode invocation GetValue in Active Object pattern
+ */
 public class GetValue implements Callable<Integer> {
 
 	private Generator generator;
@@ -14,7 +17,7 @@ public class GetValue implements Callable<Integer> {
 
 	@Override
 	public Integer call() throws Exception {
-		return generator.getValue();
+		return generator.getValue(observerGeneratorAsync);
 	}
 
 }

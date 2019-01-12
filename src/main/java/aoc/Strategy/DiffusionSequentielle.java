@@ -7,9 +7,14 @@ import aoc.Generator;
 import aoc.GeneratorImpl;
 import aoc.ObserverGeneratorAsync;
 
+/**
+ * Sequential Diffusion
+ * Each display use a sequence of value given by the generator
+ *
+ */
 public class DiffusionSequentielle implements AlgoDiffusion {
 
-	/*
+	/**
 	 * Diffusion séquentielle :
 	 * Tous les afficheurs voient la même sous-suite de valeurs du générateur.
 	 * On attend que tous les afficheurs aient lu une valeur avant de leur
@@ -49,6 +54,10 @@ public class DiffusionSequentielle implements AlgoDiffusion {
 
 	}
 
+	/**
+	 * Execute the sequential algorythme
+	 * @param g the generator to increment
+	 */
 	public void execute(GeneratorImpl g) {
 
 		g.increment();
@@ -72,6 +81,11 @@ public class DiffusionSequentielle implements AlgoDiffusion {
 
 	}
 
+	/**
+	 * Check if the channel have already ask the getValue for a specific value
+	 * if not: we add it the the list and we check the readers list size
+	 * @param reader that call getValue
+	 */
 	public void aReaderReads(ObserverGeneratorAsync reader) {
 		// On enregistre le lecteur dans la liste des lecteurs qui ont lu la copie.
 		if (observers.contains(reader) && !readers.contains(reader)) {
@@ -84,9 +98,15 @@ public class DiffusionSequentielle implements AlgoDiffusion {
 		}
 	}
 
+	/**
+	 *
+	 * @param reader that call the getValue method
+	 * @param generator that increment the value to display
+	 * @return the value to return to the channel
+	 */
 	public Integer getValue(ObserverGeneratorAsync reader, GeneratorImpl generator) {
 
-		// Valeur à retourner au lecteur
+
 		return value;
 	}
 }

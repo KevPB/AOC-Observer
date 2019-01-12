@@ -1,0 +1,13 @@
+/home/phi/IdeaProjects/tpaoc/src/main/java/aoc/Generator.java
+/home/phi/IdeaProjects/tpaoc/src/main/java/aoc/Update.java
+/home/phi/IdeaProjects/tpaoc/src/main/java/aoc/App.java
+/home/phi/IdeaProjects/tpaoc/src/main/java/aoc/GeneratorAsync.java
+/home/phi/IdeaProjects/tpaoc/src/main/java/aoc/GeneratorImpl.java
+/home/phi/IdeaProjects/tpaoc/src/main/java/aoc/Strategy/AlgoDiffusion.java
+/home/phi/IdeaProjects/tpaoc/src/main/java/aoc/Strategy/DiffusionAtomique.java
+/home/phi/IdeaProjects/tpaoc/src/main/java/aoc/Strategy/DiffusionSequentielle.java
+/home/phi/IdeaProjects/tpaoc/src/main/java/aoc/Channel.java
+/home/phi/IdeaProjects/tpaoc/src/main/java/aoc/Display.java
+/home/phi/IdeaProjects/tpaoc/src/main/java/aoc/ObserverGeneratorAsync.java
+/home/phi/IdeaProjects/tpaoc/src/main/java/aoc/ObserverGenerator.java
+/home/phi/IdeaProjects/tpaoc/src/main/java/aoc/GetValue.java

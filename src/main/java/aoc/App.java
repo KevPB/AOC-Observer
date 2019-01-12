@@ -1,11 +1,20 @@
 package aoc;
 
 import aoc.Strategy.DiffusionAtomique;
+import aoc.Strategy.DiffusionSequentielle;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
 
+/**
+ * Main class to run the service
+ * Generator, display and channel instanciation
+ * attach display to channel
+ * attach channel to generator
+ * Play with corePoolSize in Executors.newScheduledThreadPool
+ * Run the generator to start the service
+ */
 public class App 
 {
     public static void main( String[] args )
@@ -15,7 +24,7 @@ public class App
     	ObserverGenerator display2 = new Display(3);
     	ObserverGenerator display3 = new Display(2);
     	ObserverGenerator display4 = new Display(4);
-    	ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(8);
+    	ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(20);
     	Channel channel1 = new Channel(scheduler);
     	channel1.attach(display1);
     	Channel channel2 = new Channel(scheduler);

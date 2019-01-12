@@ -5,8 +5,19 @@ import aoc.Strategy.AlgoDiffusion;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Implementation of Generator interface
+ * play the role of Concrete subject in Observer pattern
+ *
+ * Also implement Runnable in order to offer a Run method
+ */
 public class GeneratorImpl implements Generator, Runnable {
 
+    /**
+     * value: Value to increment and to transmit
+     * observerAsyncs: list of channel observer
+     * algoDiffusion: way of value transmission to the observers
+     */
     private Integer value;
     private List<ObserverGeneratorAsync> observerAsyncs;
     private AlgoDiffusion algoDiffusion;
